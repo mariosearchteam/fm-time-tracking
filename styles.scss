@@ -12,6 +12,7 @@ $clr-violet: #7536d3;
 $clr-soft-orange: #f1c65b;
 $clr-very-dark-blue: #0f1424;
 $clr-dark-blue: #1c1f4a;
+$clr-dark-blue-hover: #33397a;
 $clr-desaturated-blue: #6f76c8;
 $clr-pale-blue: #bdc1ff;
 $clr-white: #fff;
@@ -193,9 +194,17 @@ main {
     position: relative;
     padding: $spacer-300;
     margin-top: -1rem;
+    &:hover,
+    &:focus {
+      background-color: $clr-dark-blue-hover;
+      cursor: pointer;
+    }
   }
   &__top {
     margin-bottom: $spacer-100;
+    & a:hover path {
+      fill: $clr-white;
+    }
   }
 
   & h2 {
@@ -281,12 +290,12 @@ main {
     & header {
       height: 100%;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: start;
     }
     & .nav ul {
       flex-direction: column;
-      gap: $spacer-200;
+      gap: $spacer-300;
     }
     & img {
       width: 5rem;
