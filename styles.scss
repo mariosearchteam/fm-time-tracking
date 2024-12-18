@@ -194,17 +194,10 @@ main {
     padding: $spacer-300;
     margin-top: -1rem;
   }
-  &__right {
-    text-align: right;
-
-    & a {
-      color: $clr-pale-blue;
-      font-size: 2rem;
-      & svg {
-        margin-bottom: 1rem;
-      }
-    }
+  &__top {
+    margin-bottom: $spacer-100;
   }
+
   & h2 {
     font-size: 1.125rem;
     font-weight: 400;
@@ -277,7 +270,8 @@ main {
 
 @media (min-width: 40rem) {
   .dashboard {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
   }
   .header {
     grid-row: 1 / -1;
@@ -301,6 +295,23 @@ main {
     & h1 {
       font-size: 2.5rem;
       max-width: 10ch;
+    }
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    min-width: 16rem;
+    &__bottom.split {
+      flex-direction: column;
+      align-items: start;
+      gap: $spacer-200;
+      margin-top: $spacer-400;
+    }
+    &__time {
+      font-size: 3.5rem;
     }
   }
 }
